@@ -4,9 +4,9 @@ import { Answer } from './index';
 const AnswersList = () => {
   return (
     <div className="c-grid__answer">
-      <Answer />
-      <Answer />
-      <Answer />
+      <Answer content={"hoge"} />
+      <Answer content={"hoge"} />
+      <Answer content={"hoge"} />
     </div>
   );
 };
