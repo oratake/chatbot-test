@@ -4,7 +4,9 @@ import { Answer } from './index';
 const AnswersList = (props) => {
   return (
     <div className="c-grid__answer">
-      <Answer content={props.answers} />
+      {props.answers.map((value, index) => {
+        return <Answer content={value.content} />
+      })}
     </div>
   );
 };
