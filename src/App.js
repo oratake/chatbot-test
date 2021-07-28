@@ -1,6 +1,6 @@
 import React from 'react';
-import './App.css';
 import defaultDataset from './dataset';
+import './assets/styles/style.css';
 
 export class App extends React.Component {
   constructor(props) {
