@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import defaultDataset from './dataset';
 
 export class App extends React.Component {
   constructor(props) {
@@ -8,7 +9,7 @@ export class App extends React.Component {
       answers: [],
       chats: [],
       currentId: "init",
-      dataset: {},
+      dataset: defaultDataset,
       open: false
     }
   }
