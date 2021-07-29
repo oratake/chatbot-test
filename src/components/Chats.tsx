@@ -22,6 +22,9 @@ export default function Chats() {
   return (
     <List className={classes.root}>
       <Chat />
+      <Chat />
+      <Chat />
+      <Chat />
     </List>
   );
 };
