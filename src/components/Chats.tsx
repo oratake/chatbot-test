@@ -3,6 +3,13 @@ import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import { Chat } from './index';
 
+type Props = {
+  chats: {
+    text: String,
+    type: String
+  }[]
+};
+
 const useStyles = makeStyles((theme: Theme) => 
   createStyles({
     root: {
@@ -16,15 +23,14 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default function Chats() {
+export default function Chats(props: Props) {
   const classes = useStyles();
 
   return (
     <List className={classes.root}>
-      <Chat />
-      <Chat />
-      <Chat />
-      <Chat />
+      {props.chats.map((chat, index) => (
+        <Chat text={chat.text} key={index.toString()} /> 
+      ))}
     </List>
   );
 };

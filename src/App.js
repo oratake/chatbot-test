@@ -48,7 +48,7 @@ export default class App extends React.Component {
     return (
       <section className="c-section">
         <div className="c-box">
-          <Chats />
+          <Chats chats={this.state.chats} />
           <AnswersList answers={this.state.answers} />
         </div>
       </section>
