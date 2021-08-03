@@ -15,33 +15,44 @@ export default class App extends React.Component {
     }
   }
 
-  initAnswer = () => {
-    const initDataset = this.state.dataset[this.state.currentId];
-    const initAnswers = initDataset.answers;
-
-    this.setState({
-      answers: initAnswers
-    })
-  };
-
-  initChats = () => {
-    const initDataset = this.state.dataset[this.state.currentId];
-    const chat = {
-      text: initDataset.question,
-      type: 'question'
-    };
-
+  displayNextQuestion = (nextQuestionId) => {
     const chats = this.state.chats;
-    chats.push(chat);
+    chats.push({
+      text: this.state.dataset[nextQuestionId].question,
+      type: 'question',
+    });
 
     this.setState({
-      chats: chats
+      answers: this.state.dataset[nextQuestionId].answers,
+      chats: chats,
+      currentId: nextQuestionId,
     });
   };
 
+  selectAnswer = (selectedAnswer, nextQuestionId) => {
+    switch(true)  {
+      case (nextQuestionId === 'init'):
+        this.displayNextQuestion(nextQuestionId);
+        break;
+      default: 
+        const chats = this.state.chats;
+        chats.push({
+          text: selectedAnswer,
+          type: 'answer',
+        });
+
+        this.setState({
+          chats: chats
+        });
+
+        this.displayNextQuestion(nextQuestionId);
+        break;
+    }
+  };
+
   componentDidMount() {
-    this.initChats();
-    this.initAnswer();
+    const initAnswer = '';
+    this.selectAnswer(initAnswer, this.state.currentId);
   };
 
   render() {
