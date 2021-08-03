@@ -1,6 +1,8 @@
 import React from 'react';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import { ListItem, ListItemAvatar, Avatar } from '@material-ui/core';
+import BotIcon from '../assets/bot_icon.jpg';
+import NoProfile from '../assets/member.jpg';
 
 type Props = {
   type: String,
@@ -14,7 +16,7 @@ const Chat = (props: Props) => {
   return (
     <ListItem className={classes}>
       <ListItemAvatar>
-        <Avatar alt="icon" src="/static/images/avatar/1.jpg" />
+        <Avatar alt="icon" src={isQuestion ? BotIcon : NoProfile} />
       </ListItemAvatar>
       <div className="p-chat__bubble">{props.text}</div>
     </ListItem>
