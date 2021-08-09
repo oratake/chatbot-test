@@ -30,7 +30,7 @@ export default class App extends React.Component {
     });
   };
 
-  selectAnswer = (selectedAnswer, nextQuestionId) => {
+  selectAnswer = (selectedAnswer, nextQuestionId): void => {
     switch(true)  {
       case (nextQuestionId === 'init'):
         this.displayNextQuestion(nextQuestionId);
