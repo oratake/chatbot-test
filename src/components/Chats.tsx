@@ -29,7 +29,7 @@ export default function Chats(props: Props) {
   return (
     <List className={classes.root}>
       {props.chats.map((chat, index) => (
-        <Chat text={chat.text} key={index.toString()} /> 
+        <Chat text={chat.text} type={chat.type} key={index.toString()} /> 
       ))}
     </List>
   );
