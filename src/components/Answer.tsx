@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, createStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
 type Props = {
@@ -9,16 +9,29 @@ type Props = {
   select: () => void, 
 };
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-  },
-}));
+const useStyles = makeStyles(() => (
+  createStyles({
+    "button": {
+      borderColor: '#FFB549',
+      color: '#FFB549',
+      fontWeight: 600,
+      marginBottom: '8px',
+      "&:hover": {
+        backgroundColor: '#FFB549',
+        color: '#FFFFFF',
+      }
+    }
+  })
+));
 
 const Answer = (props: Props) => {
-  // const classes = useStyles();
+  const classes = useStyles();
 
   return (
-    <Button variant="contained" color="primary" onClick={() => props.select(props.content, props.nextId)}>
+    <Button
+      className={classes.button}
+      variant="outlined" onClick={() => props.select(props.content, props.nextId)}
+    >
       {props.content}
     </Button>
   );
