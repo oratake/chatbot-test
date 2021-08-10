@@ -31,10 +31,18 @@ export default class App extends React.Component {
   };
 
   selectAnswer = (selectedAnswer, nextQuestionId): void => {
-    switch(true)  {
+    switch(true) {
       case (nextQuestionId === 'init'):
         this.displayNextQuestion(nextQuestionId);
         break;
+
+      case (/^http*:*/.test(nextQuestionId)):
+        const anker = document.createElement('a');
+        anker.href = nextQuestionId;
+        anker.target = '_blank';
+        anker.click();
+        break;
+
       default: 
         const chats = this.state.chats;
         chats.push({
