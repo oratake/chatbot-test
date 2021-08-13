@@ -13,19 +13,6 @@ type Props = {
 export default class FormDialog extends React.Component {
   constructor(props: Props) {
     super(props);
-    this.state = {
-      open: false,
-    }
-
-    this.handleClose = this.handleClose.bind(this);
-  };
-
-  handleClickOpen = () => {
-    this.setState({ open: true });
-  };
-
-  handleClose = () => {
-    this.setState({ open: false });
   };
 
   render() {
