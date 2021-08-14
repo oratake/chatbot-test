@@ -6,7 +6,10 @@ type Props = {
     content: String,
     nextId: String,
   }[],
-  select: () => void,
+  select: (
+    selectedAnswer: String,
+    nextQuestionId: String,
+  ) => void,
 };
 
 const AnswersList = (props: Props) => {

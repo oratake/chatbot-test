@@ -1,7 +1,7 @@
 import React from 'react';
 import defaultDataset from './dataset';
 import './assets/styles/style.css';
-import { AnswersList, Chats } from './components/index';
+import { AnswersList, Chats, FormDialog } from './components/index';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -13,6 +13,7 @@ export default class App extends React.Component {
       dataset: defaultDataset,
       open: false
     }
+
     this.selectAnswer = this.selectAnswer.bind(this);
     this.handleClickOpen = this.handleClickOpen.bind(this);
     this.handleClose = this.handleClose.bind(this);
@@ -85,8 +86,9 @@ export default class App extends React.Component {
         <div className="c-box">
           <Chats chats={this.state.chats} />
           <AnswersList answers={this.state.answers} select={this.selectAnswer} />
+          <FormDialog open={this.state.open} handleClose={this.handleClose} />
         </div>
       </section>
     );
-  }
-}
+  };
+};

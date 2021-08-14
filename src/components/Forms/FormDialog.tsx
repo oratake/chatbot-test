@@ -7,7 +7,8 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
 type Props = {
-
+  open: String,
+  handleClose: () => void,
 };
 
 export default class FormDialog extends React.Component {
