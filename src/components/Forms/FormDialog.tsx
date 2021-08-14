@@ -11,8 +11,8 @@ type Props = {
   handleClose: () => void,
 };
 
-export default class FormDialog extends React.Component {
-  constructor(props: Props) {
+export default class FormDialog extends React.Component<any> {
+  constructor(props: any) {
     super(props);
   };
 
