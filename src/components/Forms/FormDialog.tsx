@@ -29,8 +29,8 @@ export default class FormDialog extends React.Component {
 
     return(
       <Dialog
-        open={this.state.open}
-        onClose={this.handleClose}
+        open={this.props.open}
+        onClose={this.props.handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
@@ -42,10 +42,10 @@ export default class FormDialog extends React.Component {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={this.handleClose} color="primary">
+          <Button onClick={this.props.handleClose} color="primary">
             Disagree
           </Button>
-          <Button onClick={this.handleClose} color="primary" autoFocus>
+          <Button onClick={this.props.handleClose} color="primary" autoFocus>
             Agree
           </Button>
         </DialogActions>
